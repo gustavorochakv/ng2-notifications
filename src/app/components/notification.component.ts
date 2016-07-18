@@ -31,6 +31,7 @@ export class PushNotificationComponent implements OnInit, OnChanges, OnDestroy {
   @Input() public vibrate: Array<number>;
   @Input() public noscreen: boolean = false;
   @Input() public silent: boolean = true;
+  @Input() public requireInteraction: boolean = false;
   @Input() public closeDelay: number = 0;
 
   @Output('load') public onLoad: EventEmitter<any> = new EventEmitter();
@@ -74,6 +75,7 @@ export class PushNotificationComponent implements OnInit, OnChanges, OnDestroy {
       silent: this.silent,
       sound: this.sound,
       renotify: this.renotify,
+      requireInteraction: this.requireInteraction,
       sticky: this.sticky,
       vibrate: this.vibrate,
       noscreen: this.noscreen
